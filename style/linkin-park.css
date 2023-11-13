@@ -1,0 +1,22 @@
+body {
+    margin: 3em 8%;
+    font-family: Helvetica, Arial, sans-serif;
+    color: black;
+    background-color: #f0ee0c;
+}
+
+div.page {
+    max-width: 40em;
+    margin: 0 auto;
+}
+
+h1 { 
+    justify-content: space-between;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 260%;
+    margin: 2em 0 0.5em 0;
+    padding: .25em 0;
+    color: blue;
+    background-color: #ff2c2c;
+}
