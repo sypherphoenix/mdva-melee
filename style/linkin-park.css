@@ -19,3 +19,18 @@ h1 {
     color: blue;
     background-image: linear-gradient(red, yellow);
 }
+
+.column{
+    flex: 1;
+    min-width: 0;
+    border: 1px;
+    padding: 10px;
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px; 
+}
