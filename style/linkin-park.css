@@ -1,36 +1,77 @@
 body {
-    margin: 3em 8%;
-    font-family: Helvetica, Arial, sans-serif;
-    color: white;
-    background-image: url("../images/sggbg.png");
+    background: #ffffff;
+    margin: 0px;
+    margin-top: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    overscroll-behavior: none;
 }
 
-div.page {
-    margin: 0 auto;
-}
-
-h1 { 
-    justify-content: space-between;
-    font-variant: small-caps;
-    text-align: center;
-    font-size: 260%;
-    margin: 2em 0 0.5em 0;
-    padding: .25em 0;
-    color: blue;
-    background-image: linear-gradient(red, yellow);
-}
-
-.column{
-    flex: 1;
-    min-width: 0;
-    border: 1px;
-    padding: 10px;
-    text-align: center;
-}
-
-.row{
+#navbar {
+    background-color: gray;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px; 
+    flex-direction: row-reverse;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+#navbar h1 {
+    flex-basis: 85%;
+    margin: 1%;
+}
+
+#navbar a {
+    flex-basis: 5%;
+    display: block;
+    text-align: center;
+    padding: 1%;
+    text-decoration: none;
+    font-size: 22px;
+    color: black
+}
+
+#navbar a:hover {
+    background-color: darkgray;
+}
+
+#navbar a.active {
+    background-color: darkgray;
+}
+
+#navbar img {
+    margin: 0.5%;
+}
+
+#notification {
+    background-color: red;
+    padding: 1%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    background: darkgray;
+    padding: 1%;
+}
+
+.side {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 1%;
+}
+
+/* Main column */
+.main {
+    flex: 70%;
+    background-color: white;
+    padding: 1%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.calendar{
+    height: 50em;
 }
