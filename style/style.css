@@ -6,7 +6,6 @@
 body {
     color: white;
     margin: 0px;
-    margin-top: 60px;
     font-family: 'FolkPro', sans-serif;
     overscroll-behavior: none;
     background-size: 200% 200%;
@@ -30,6 +29,7 @@ body {
 }
 
 .grid {
+    padding-top: 10%;
     background-size: 40px 40px;
     background-image:
         linear-gradient(to right, rgba(128, 128, 128, 0.25) 2px, transparent 2px),
