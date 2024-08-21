@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'FolkPro';
+    src: url('A-OTF Folk Pro B.otf') format('opentype');
+}
+
+body {
+    color: white;
+    margin: 0px;
+    margin-top: 60px;
+    font-family: 'FolkPro', sans-serif;
+    overscroll-behavior: none;
+    background-size: 200% 200%;
+    background-image: repeating-linear-gradient(67.5deg, midnightblue, #020212 400px, #020212 800px, midnightblue 1200px);
+    animation: pan linear 15s infinite;
+
+}
+
+@keyframes pan {
+    100% {
+        background-position: 100%;
+    }
+}
+
+.stripes {
+    background: repeating-linear-gradient(-22.5deg,
+            #020212,
+            #020212 5px,
+            rgba(0, 0, 0, 0) 5px,
+            rgba(0, 0, 0, 0) 10px);
+}
+
+.grid {
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, rgba(128, 128, 128, 0.25) 2px, transparent 2px),
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.25) 2px, transparent 2px);
+}
+
+#navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    flex-direction: row;
+    width: 100%;
+    z-index: 999;
+}
+
+#navbar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+    background-color: rgba(150, 150, 150, 0.9);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 30% 10%, 25% 100%, 0% 100%);
+}
+
+#navbar h1 {
+    margin: 1%;
+    color: black;
+    z-index: inherit;
+    font-style: italic;
+}
+
+#navbar img{
+    margin-top:1.5%;
+    z-index: inherit;
+}
+
+#navbar a {
+    flex-basis: 5%;
+    display: block;
+    color: yellow;
+    text-align: center;
+    padding: 1%;
+    text-decoration: none;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: inherit;
+}
+
+#navbar a:hover {
+    background-color: darkgray;
+}
+
+#navbar a.active {
+    border: 2px solid yellow;
+}
+
+#notification {
+    background-color: red;
+    padding: 1%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    background: darkgray;
+    padding: 1%;
+}
+
+#side {
+    flex: 30%;
+}
+
+#main {
+    flex: 70%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.calendar {
+    height: 50em;
+    padding: 0% 10% 10% 10%;
+}
+.contentbox h1{
+    margin-top:0px;
+    margin-left:2.5%;
+    font-style:italic;
+}
+.contentbox::before{
+    content: "";
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url(borderoptimized.svg);
+}
