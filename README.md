@@ -1,4 +1,5 @@
 For now, you can visit the site here: https://sypherphoenix.github.io/mdva-melee/index.html
+
 PRs: https://sypherphoenix.github.io/mdva-melee/power_ranking.html
 
 This is a work in progress.
