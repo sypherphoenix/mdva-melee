@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'ANL';
+    src: url('fonts/alethia-next-bold.otf') format('opentype');
+}
+
+body {
+    a:link {
+        color: white;
+        text-decoration: none;
+    }
+    a:visited {
+        color: white;
+    }
+}
+
+.page_container {
+    font-family: 'ANL'; /*  Ideally: Motoya Aporo Std-W6 */
+    display: flex;
+        
+    max-width: fit-content;
+    margin: auto;
+}
+
+
+.toc_frame {
+    flex-grow: 1;
+
+    max-width: fit-content;
+    padding: 32px;
+    
+}
+
+.toc_container {
+    position: sticky;
+    top: 5%;
+}
+
+.toc_above, .toc_below {
+    display: flex;
+    justify-content: center;
+    text-wrap: nowrap;
+}
+
+.toc_outer {
+    border: 2px solid var(--color_theme_faint);
+    border-top: none;
+    border-bottom: none;
+    
+    .toc_vertical_borders {
+        display: flex;
+        
+        .toc_outer_mid {
+            flex-grow: 1;
+            border: none;
+        }
+        
+        .toc_outer_corner {
+            flex-grow: 1;
+            border-bottom: 4px solid var(--color_theme_faint);
+        }
+    }
+}
+
+
+.toc {
+    font-size: large;
+    text-wrap: nowrap;
+    text-align: right;
+
+    background-color: black;
+    
+    
+    margin: 2px;
+    border-collapse: collapse;
+
+    td {
+        border: 2px solid var(--color_theme_faint);
+    }
+
+    tr:hover{
+        background-color: rgb(80, 50, 0);
+    }
+}
+
+.pr_history {
+    flex-grow: 1;
+    justify-content: center;
+    margin: auto;
+}
+
+.pr_block {
+    border: 2px solid var(--color_theme_faint);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        text-wrap: nowrap;
+        margin: 16px;
+    }
+
+    margin-bottom: 32px;
+}
+
+.pr_block_main {
+    display: flex;
+}
+
+.pr_table_container {
+    padding: 2%;
+
+    text-wrap: nowrap;
+
+    table {
+        font-size: x-large;
+        table-layout: fixed;
+        width: 400px;
+    
+        --rank_color: hsl(0, 0%, 15%);
+        --rank_text_color: hsl(0, 0%, 100%);
+
+        tr {
+            background-image: linear-gradient(to right, var(--rank_color) 0%, black 15%, black 45%, var(--rank_color) 90%);
+            border-bottom: 1px solid var(--rank_color);
+        }
+
+        td:first-child { 
+            text-align: right;
+            padding-right: 1em;
+            width: 32px;
+            /*color: var(--rank_text_color) Too much? */ 
+        };
+
+        td:last-child { 
+            text-align: right;
+            width: 132px; /* 64+64+4 for two character images */
+        };
+
+        img {
+            vertical-align: middle;
+            border: 1px solid black;
+        }
+
+        border-collapse: collapse;
+
+
+        margin: auto;
+    }
+}
+
+tr.r1 {
+    --rank_color: hsl(0, 100%, 30%);
+    --rank_text_color: hsl(0, 100%, 50%);
+}
+
+tr.r2 {
+    --rank_color: hsl(24, 100%, 30%);
+    --rank_text_color: hsl(24, 100%, 50%);
+}
+
+tr.r3 {
+    --rank_color: hsl(45, 100%, 30%);
+    --rank_text_color: hsl(45, 100%, 50%);
+}
+
+tr.r4 {
+    --rank_color: hsl(120, 100%, 25%);
+    --rank_text_color: hsl(120, 100%, 50%);
+}
+
+tr.r5 {
+    --rank_color: hsl(210, 100%, 30%);
+    --rank_text_color: hsl(210, 100%, 50%);
+}
+
+
+.pr_img {
+    margin: auto;
+    padding-left: 10%;
+    max-width: 400px;
+}
+
+.pr_block_info {
+    display: flex;
+    justify-content: center;
+    text-wrap: nowrap;
+    
+    margin: 32px;
+
+    font-style: italic;
+
+    th, td {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+}
