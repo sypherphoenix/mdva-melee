@@ -1,0 +1,36 @@
+body {
+    margin: 3em 8%;
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    background-image: url("../images/sggbg.png");
+}
+
+div.page {
+    margin: 0 auto;
+}
+
+h1 { 
+    justify-content: space-between;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 260%;
+    margin: 2em 0 0.5em 0;
+    padding: .25em 0;
+    color: blue;
+    background-image: linear-gradient(red, yellow);
+}
+
+.column{
+    flex: 1;
+    min-width: 0;
+    border: 1px;
+    padding: 10px;
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px; 
+}
