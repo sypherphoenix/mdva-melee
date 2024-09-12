@@ -1,0 +1,6 @@
+body {
+    /* Blue coloring */
+    --color_theme_faint: hsl(230, 33%, 70%);
+    --color_theme_dark: hsl(230, 80%, 14%);
+    --color_theme_black: hsl(230, 64%, 4%);
+}
