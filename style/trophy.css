@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'Alethia';
+    src: url('fonts/alethia-next-bold.otf') format('opentype');
+}
+
+
+body {
+    color: white;
+    background-color: #002000;
+}
+
+
+div.trophy_frame {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    
+    display: flex;
+}
+
+div.trophy_frame_left {
+    flex-grow: 1;
+    
+    
+    border: 2px solid var(--color_theme_faint);
+    border-right: none;
+    border-left: none;
+
+    display: flex;
+    flex-direction: column;
+
+
+    --left_frame_width: 60px;
+    width: var(--left_frame_width);
+}
+
+
+div.left_top {
+    height: 30px;
+    border-left: 2px solid var(--color_theme_faint);
+    background-color: black;
+}
+
+div.left_upper {
+    height: var(--left_frame_width);
+    width: var(--left_frame_width);
+
+    background: linear-gradient(225deg,  
+        #000000 0%, #000000 41px, 
+        var(--color_theme_faint) 42px, var(--color_theme_faint) 44px, 
+        rgba(0,0,0,0) 43.5px, rgba(0,0,0,0) 100%);
+}
+
+div.left_middle {
+    flex-grow: 1;
+    border-right: 2px solid var(--color_theme_faint);
+}
+
+div.left_middle_text {
+    position: sticky;
+    top: 40%;
+
+
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    
+
+    writing-mode: vertical-lr;
+    font-size: xx-large;
+    font-style: italic;
+    transform: rotate(180deg);
+    
+}
+
+div.left_lower {
+    height: var(--left_frame_width);
+    width: var(--left_frame_width);
+
+    background: linear-gradient(-45deg,  
+        #000000 0%, #000000 41px, 
+        var(--color_theme_faint) 42px, var(--color_theme_faint) 44px, 
+        rgba(0,0,0,0) 43.5px, rgba(0,0,0,0) 100%);
+}
+
+div.left_bottom {
+    height: 30px;
+    border-left: 2px solid var(--color_theme_faint);
+    background-color: black;    
+}
+
+
+
+div.trophy_frame_right {
+    
+    flex-grow: 10;
+    
+    padding: 1.5%;
+    padding-right: 4%;
+    padding-left: 4%;
+
+    background-color: black;
+
+    border: 2px solid var(--color_theme_faint);
+    border-left: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    
+
+    a:link {
+        text-decoration: none;
+    }
+}
+
+
+.trophy {
+    font-family: 'Alethia'; /*  Ideally: Motoya Aporo Std-W6 */
+    font-size: x-large;
+    
+
+    /* Coloring */
+    --color_highlight: #d9d9d9;
+    --color_main: #999999;
+    --color_shadow: #2b2b2b;
+    background-color: #999999; /* Fallback */
+    color: white;
+    background: linear-gradient(to bottom, var(--color_highlight) 5%, var(--color_main) 10%, var(--color_main) 90%, var(--color_shadow) 95%);
+    
+
+    border: 2px solid black;
+    border-radius: 4px;
+
+    display:flex;
+}
+
+
+
+.trophy:hover {
+    --color_highlight: #ffffff;
+    --color_main: #d9d9d9;
+    --color_shadow: #999999;
+    background-color: #d9d9d9; /* Fallback */
+    color: black;
+}
+
+div.trophy_side_left {
+    width: 50px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div.trophy_side_right {
+    width: 70px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div.trophy_name {
+    flex-grow: 1;
+    width: 300px;
+    white-space: nowrap;
+}
+
+div.amount_container {
+    border: 2px solid;
+    border-color: var(--color_shadow) var(--color_highlight) var(--color_highlight) var(--color_shadow);
+    border-radius: 4px;
+
+    line-height: 22px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    display: flex;
+}
+
+div.times {
+    flex-grow: 1;
+    text-align: left;
+}
+
+div.amount {
+    flex-grow: 1;
+    text-align: right;
+}
