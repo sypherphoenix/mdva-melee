@@ -1,9 +1,3 @@
-@font-face {
-    font-family: 'Alethia';
-    src: url('fonts/alethia-next-bold.otf') format('opentype');
-}
-
-
 body {
     color: white;
     background-color: #002000;
@@ -114,7 +108,7 @@ div.trophy_frame_right {
 
 
 .trophy {
-    font-family: 'Alethia'; /*  Ideally: Motoya Aporo Std-W6 */
+    font-family: 'Alethia';
     font-size: x-large;
     
 

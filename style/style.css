@@ -3,6 +3,12 @@
     src: url('fonts/A-OTF Folk Pro B.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'Alethia';
+    src: url('fonts/alethia-next-bold.otf') format('opentype');
+     /* This font is a stand-in for "Motoya Aporo Std-W6", ideally we eventually use that */
+}
+
 body {
     /* Color definitions */
     --color_theme_faint: hsl(0, 0%, 70%);
