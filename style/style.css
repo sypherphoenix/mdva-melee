@@ -1,17 +1,22 @@
 @font-face {
     font-family: 'FolkPro';
-    src: url('A-OTF Folk Pro B.otf') format('opentype');
+    src: url('fonts/A-OTF Folk Pro B.otf') format('opentype');
 }
 
 body {
+    /* Color definitions */
+    --color_theme_faint: hsl(0, 0%, 70%);
+    --color_theme_dark: hsl(0, 0%, 14%);
+    --color_theme_black: hsl(0, 0%, 4%);
+
     color: white;
     margin: 0px;
     font-family: 'FolkPro', sans-serif;
     overscroll-behavior: none;
-    background-size: 200% 200%;
-    background-image: repeating-linear-gradient(67.5deg, midnightblue, #020212 400px, #020212 800px, midnightblue 1200px);
-    animation: pan linear 15s infinite;
 
+    background-size: 200% 200%;
+    background-image: repeating-linear-gradient(67.5deg, var(--color_theme_dark), var(--color_theme_black) 400px, var(--color_theme_black) 800px, var(--color_theme_dark) 1200px);
+    animation: pan linear 15s infinite;
 }
 
 @keyframes pan {
@@ -20,16 +25,18 @@ body {
     }
 }
 
-.stripes {
+.bg_stripes {
     background: repeating-linear-gradient(-22.5deg,
-            #020212,
-            #020212 5px,
+            var(--color_theme_black),
+            var(--color_theme_black) 5px,
             rgba(0, 0, 0, 0) 5px,
             rgba(0, 0, 0, 0) 10px);
 }
 
-.grid {
+.bg_grid {
     padding-top: 10%;
+    padding-bottom: 40%;
+
     background-size: 40px 40px;
     background-image:
         linear-gradient(to right, rgba(128, 128, 128, 0.25) 2px, transparent 2px),
