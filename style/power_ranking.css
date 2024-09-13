@@ -64,15 +64,19 @@ body {
 
     background-color: black;
     
-    
     margin: 2px;
     border-collapse: collapse;
 
     td {
         border: 2px solid var(--color_theme_faint);
+        display: flex;
+
+        a {
+            flex-grow: 1;
+        }
     }
 
-    tr:hover{
+    td:hover{
         background-color: rgb(80, 50, 0);
     }
 }
