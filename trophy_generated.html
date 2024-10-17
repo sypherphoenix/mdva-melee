@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>MD/VA Melee: Trophy Gallery</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style-green.css">
+    <link rel="stylesheet" href="style/trophy.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+    
+</head>
+
+
+<div class="bg_stripes">
+    <div class="bg_grid">
+
+
+        <div class="trophy_frame">
+            <div class="trophy_frame_left">
+
+                <div class="left_top"></div>
+                <div class="left_upper"></div>
+                <div class="left_middle"><div class="left_middle_text">
+                    Trophy List
+                </div></div>
+                <div class="left_lower"></div>
+                <div class="left_bottom"></div>
+            </div>
+
+            <div class="trophy_frame_right" id="trophy_frame_right">
+
+                <!-- A bunch of generated content ends up here. -->
+                <!-- A list of players is generated in the <script> section of this file. -->
+                <!-- The data comes from parsing a file containing past power rankings. -->
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    const rankings_json_url = "./rankings.json";
+
+    document.addEventListener("DOMContentLoaded", call_function_with_json(rankings_json_url, fill_player_trophies), false); // Call function on page load
+
+    // Retrieves a json and calls a function with the parsed json as an argument
+    // I don't actually know what I'm doing; if there's a better way to do this, please contribute!
+    function call_function_with_json(json_url, function_that_takes_json) {
+        xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var data = JSON.parse(this.responseText);
+                function_that_takes_json(data);
+            }
+        }
+        
+        xmlhttp.open("POST", json_url, true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send();
+    }
+
+
+    // Fills out the player trophies using data parsed from contents of the file at ranked_json_url.
+    function fill_player_trophies(rankings_json) {
+
+        // 1: Parse rankings json and accumulate our list of players
+        let players = new Map();
+        
+        rankings_json.rankings.forEach(function(ranking) {
+                ranking.ranks.forEach(function(player){
+                    if (!players.has(player.player_id)) { 
+                        players.set(player.player_id, { "name": player.display_name, "count": 0 }); // Init new player
+                    }
+
+                    players.get(player.player_id).count++;     
+                });
+            }
+        );
+
+
+        // 2: Use & prefer data from secondary json to determine the best display name / website to link // TODO
+        if (players.has("sypherphoenix")) players.get("sypherphoenix").site = "./players/sypherphoenix.html"; // example post-parse
+        if (players.has("milkman")) players.get("milkman").name = "ZODD-01";
+
+
+        // 3. Order list properly & clean up entries (such as "")
+        players = new Map([...players.entries()].sort()); // TODO: Sort by display name, not map id
+
+
+        // 3: Generate and add a trophy entry for each player in the list.
+        var trophy_list = document.getElementById("trophy_frame_right"); // Parent div we're slapping trophies into
+
+        players.forEach(function(player) {
+                trophy_list.appendChild(
+                    generate_player_trophy(player.name, player.count, player.site)
+                );
+            }
+        );
+    }
+
+
+
+
+
+
+    
+
+
+    // Generates and organizes a bunch of elements that constitute a trophy entry.
+    // Returns a node(?) that can be appended to a document element.
+    function generate_player_trophy(player_name, player_appearances, player_site) {
+
+        var trophy = document.createElement("a");
+        trophy.setAttribute("class", "trophy");
+        if (player_site) trophy.setAttribute("href", player_site); // Not all players have completed pages
+
+        var trophy_side_left = document.createElement("div");
+        trophy_side_left.setAttribute("class", "trophy_side_left");
+        trophy.appendChild(trophy_side_left);
+
+        var trophy_name = document.createElement("div");
+        trophy_name.setAttribute("class", "trophy_name");
+        trophy_name.innerHTML = player_name;
+        trophy.appendChild(trophy_name);
+
+        var trophy_side_right = document.createElement("div");
+        trophy_side_right.setAttribute("class", "trophy_side_right");
+        trophy.appendChild(trophy_side_right)
+
+        var amount_container = document.createElement("div");
+        amount_container.setAttribute("class", "amount_container");
+        trophy_side_right.appendChild(amount_container);
+
+        var times = document.createElement("div");
+        times.setAttribute("class", "times");
+        times.innerHTML = "x";
+        amount_container.appendChild(times);
+
+        var amount = document.createElement("div");
+        amount.setAttribute("class", "amount");
+        amount.innerHTML = player_appearances;
+        amount_container.appendChild(amount);
+
+
+        /* 
+        The generated html should be something like this:
+        
+        <a class="trophy" href="PLAYER_SITE">
+            <div class="trophy_side_left"></div>
+            <div class="trophy_name">PLAYER_NAME</div>
+            <div class="trophy_side_right">
+                <div class="amount_container">
+                    <div class="times">x</div>
+                    <div class="amount">PLAYER_APPEARANCES</div>
+                </div>
+            </div>
+        </a> 
+        */
+
+
+        return trophy;
+    }
+    
+    
+
+    function example_func(){
+
+
+
+
+        var trophy_list = document.getElementById("trophy_frame_right");
+
+
+        // somewhere: preparse ranking list and mapping list into player obj
+        // for every player obj, trophy_list.appendChild(addPlayer(playerobj));
+        
+        // func: add player (player obj);
+
+        
+        // parse out player obj here
+        const p_name = "Sypher2";
+        const p_appearances = 99;
+        const p_site = "./players/sypherphoenix.html"
+
+
+        // generate html here
+
+        var trophy = document.createElement("a");
+        trophy.setAttribute("class", "trophy");
+        trophy.setAttribute("href", p_site);
+        trophy_list.appendChild(trophy);
+
+
+
+        var trophy_side_left = document.createElement("div");
+        trophy_side_left.setAttribute("class", "trophy_side_left");
+        trophy.appendChild(trophy_side_left);
+
+        var trophy_name = document.createElement("div");
+        trophy_name.setAttribute("class", "trophy_name");
+        trophy_name.innerHTML = p_name;
+        trophy.appendChild(trophy_name);
+
+        var trophy_side_right = document.createElement("div");
+        trophy_side_right.setAttribute("class", "trophy_side_right");
+        trophy.appendChild(trophy_side_right)
+
+
+
+
+        var amount_container = document.createElement("div");
+        amount_container.setAttribute("class", "amount_container");
+        trophy_side_right.appendChild(amount_container);
+
+        var times = document.createElement("div");
+        times.setAttribute("class", "times");
+        times.innerHTML = "x";
+        amount_container.appendChild(times);
+
+        var amount = document.createElement("div");
+        amount.setAttribute("class", "amount");
+        amount.innerHTML = p_appearances;
+        amount_container.appendChild(amount);
+
+
+
+
+
+
+
+
+
+  
+
+        //t.innerHtml = "<div class=\"trophy_side_left\"></div><div class=\"trophy_name\">Aaaaaa</div><div class=\"trophy_side_right\"><div class=\"amount_container\"><div class=\"times\">x</div><div class=\"amount\">2</div></div></div>"
+        /*
+                <a class="trophy" href="./site-goes-here.html">
+                    <div class="trophy_side_left"></div>
+                    <div class="trophy_name">PLAYER-NAME-HERE</div>
+                    <div class="trophy_side_right">
+                        <div class="amount_container">
+                            <div class="times">x</div>
+                            <div class="amount">AMOUNT-GOES-HERE</div>
+                        </div>
+                    </div>
+                </a>
+        */
+
+
+
+            /*
+    
+
+var arr = [
+  {
+  "id": "1",
+  "msg": "hi",
+  "tid": "2013-05-05 23:35",
+  "fromWho": "hello1@email.se"
+  }, {
+  "id": "2",
+  "msg": "there",
+  "tid": "2013-05-05 23:45",
+  "fromWho": "hello2@email.se"
+  }
+];
+
+forEach method for easy implementation.
+
+arr.forEach(function(item){
+  console.log('ID: ' + item.id);
+  console.log('MSG: ' + item.msg);
+  console.log('TID: ' + item.tid);
+  console.log('FROMWHO: ' + item.fromWho);
+});
+
+
+    */
+
+
+        
+
+        var t = document.createElement("a");
+        t.setAttribute("class", "trophy")
+
+        var tname = document.createElement("div");
+        tname.setAttribute("class", "trophy_name");
+        tname.class = "trophy_name";
+
+        tname.innerHTML = jobj.name;
+        t.appendChild(tname);      
+
+        trophy_list.appendChild(t);
+
+    }
+</script>
+
+</html>
