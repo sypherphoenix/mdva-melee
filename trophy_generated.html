@@ -1,12 +1,15 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="utf-8">
     <title>MD/VA Melee: Trophy Gallery</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/style-green.css">
     <link rel="stylesheet" href="style/trophy.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
-    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script src="data/rankings.js"></script>
+    <script src="data/players.js"></script>
 </head>
 
 
@@ -19,9 +22,11 @@
 
                 <div class="left_top"></div>
                 <div class="left_upper"></div>
-                <div class="left_middle"><div class="left_middle_text">
-                    Trophy List
-                </div></div>
+                <div class="left_middle">
+                    <div class="left_middle_text">
+                        Trophy List
+                    </div>
+                </div>
                 <div class="left_lower"></div>
                 <div class="left_bottom"></div>
             </div>
@@ -40,72 +45,44 @@
 </div>
 
 <script>
-    const rankings_json_url = "./rankings.json";
+    document.addEventListener("DOMContentLoaded", fill_player_trophies, false); // Call function on page load
 
-    document.addEventListener("DOMContentLoaded", call_function_with_json(rankings_json_url, fill_player_trophies), false); // Call function on page load
-
-    // Retrieves a json and calls a function with the parsed json as an argument
-    // I don't actually know what I'm doing; if there's a better way to do this, please contribute!
-    function call_function_with_json(json_url, function_that_takes_json) {
-        xmlhttp = new XMLHttpRequest();
-
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var data = JSON.parse(this.responseText);
-                function_that_takes_json(data);
-            }
-        }
-        
-        xmlhttp.open("GET", json_url, true);
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send();
-    }
-
-
-    // Fills out the player trophies using data parsed from contents of the file at ranked_json_url.
-    function fill_player_trophies(rankings_json) {
+    // Fills out the player trophies using data parsed from the contents of rankings.js
+    function fill_player_trophies() {
 
         // 1: Parse rankings json and accumulate our list of players
-        let players = new Map();
-        
-        rankings_json.rankings.forEach(function(ranking) {
-                ranking.ranks.forEach(function(player){
-                    if (!players.has(player.player_id)) { 
-                        players.set(player.player_id, { "name": player.display_name, "count": 0 }); // Init new player
-                    }
+        let trophy_players = new Map();
 
-                    players.get(player.player_id).count++;     
-                });
+        MDVA_RANKINGS_DATA.rankings.forEach(function (ranking) {
+            ranking.ranks.forEach(function (player) {
+                if (!trophy_players.has(player.player_id)) {
+                    trophy_players.set(player.player_id, { "name": player.display_name, "count": 0 }); // Init new player
+                }
+
+                trophy_players.get(player.player_id).count++;
+            });
+        });
+
+        // 2: Use & prefer data from players json to determine the best display name / website to link
+        MDVA_PLAYERS_INFO.forEach(function (player) {
+            if (trophy_players.has(player.player_id)) {
+                if (player.site_id) trophy_players.get(player.player_id).site = "./players/" + player.site_id + ".html";
+                if (player.display_name) trophy_players.get(player.player_id).name = player.display_name;
             }
-        );
+        });
 
-
-        // 2: Use & prefer data from secondary json to determine the best display name / website to link // TODO
-        if (players.has("sypherphoenix")) players.get("sypherphoenix").site = "./players/sypherphoenix.html"; // example post-parse
-        if (players.has("milkman")) players.get("milkman").name = "ZODD-01";
-
-
-        // 3. Order list properly & clean up entries (such as "")
-        players = new Map([...players.entries()].sort()); // TODO: Sort by display name, not map id
-
+        // 3. Order list properly (& clean up entries?)
+        trophy_players = new Map([...trophy_players.entries()].sort()); // TODO: Sort by display name, not map id
 
         // 3: Generate and add a trophy entry for each player in the list.
         var trophy_list = document.getElementById("trophy_frame_right"); // Parent div we're slapping trophies into
 
-        players.forEach(function(player) {
-                trophy_list.appendChild(
-                    generate_player_trophy(player.name, player.count, player.site)
-                );
-            }
-        );
+        trophy_players.forEach(function (player) {
+            trophy_list.appendChild(
+                generate_player_trophy(player.name, player.count, player.site)
+            );
+        });
     }
-
-
-
-
-
-
-    
 
 
     // Generates and organizes a bunch of elements that constitute a trophy entry.
@@ -162,7 +139,6 @@
 
         return trophy;
     }
-    
-</script>
 
+</script>
 </html>

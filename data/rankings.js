@@ -1,6 +1,6 @@
+// Historical information about MD/VA power rankings.
+const MDVA_RANKINGS_DATA = 
 {
-    "date": "2024-10-16",
-    "version": "1",
     "rankings": [
         {
             "title": "Fall/Winter '23-'24",
