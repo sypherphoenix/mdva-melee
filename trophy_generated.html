@@ -12,36 +12,39 @@
     <script src="data/players.js"></script>
 </head>
 
-<div class="bg_stripes">
-    <div class="bg_grid">
+<body>
+    <div class="bg_stripes">
+        <div class="bg_grid">
 
 
-        <div class="trophy_frame">
-            <div class="trophy_frame_left">
+            <div class="trophy_frame">
 
-                <div class="left_top"></div>
-                <div class="left_upper"></div>
-                <div class="left_middle">
-                    <div class="left_middle_text">
-                        Trophy List
+                <div class="trophy_frame_left">
+                    <div class="left_top"></div>
+                    <div class="left_upper"></div>
+                    <div class="left_middle">
+                        <div class="left_middle_text">
+                            Trophy List
+                        </div>
                     </div>
+                    <div class="left_lower"></div>
+                    <div class="left_bottom"></div>
                 </div>
-                <div class="left_lower"></div>
-                <div class="left_bottom"></div>
-            </div>
 
-            <div class="trophy_frame_right" id="trophy_frame_right">
+                <div class="trophy_frame_right" id="trophy_frame_right">
 
-                <!-- A bunch of generated content ends up here. -->
-                <!-- A list of players is generated in the <script> section of this file. -->
-                <!-- The data comes from parsing a file containing past power rankings. -->
+                    <!-- A bunch of generated content ends up here. -->
+                    <!-- A list of players is generated in the <script> section of this file. -->
+                    <!-- The data comes from parsing a file containing past power rankings. -->
+
+                </div>
 
             </div>
 
 
         </div>
     </div>
-</div>
+</body>
 
 <script>
     document.addEventListener("DOMContentLoaded", fill_player_trophies, false); // Call function on page load
