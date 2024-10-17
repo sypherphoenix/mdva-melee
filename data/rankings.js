@@ -214,6 +214,110 @@ const MDVA_RANKINGS_DATA =
                     "characters": [
                         "fox"
                     ]
+                },
+                {
+                    "rank": "2",
+                    "player_id": "junebug",
+                    "display_name": "Junebug",
+                    "characters": [
+                        "dk"
+                    ]
+                },
+                {
+                    "rank": "3",
+                    "player_id": "mvlvchi",
+                    "display_name": "mvlvchi",
+                    "characters": [
+                        "peach"
+                    ]
+                },
+                {
+                    "rank": "4",
+                    "player_id": "rapm",
+                    "display_name": "RapM",
+                    "characters": [
+                        "luigi"
+                    ]
+                },
+                {
+                    "rank": "5",
+                    "player_id": "frostbyte",
+                    "display_name": "Frostbyte",
+                    "characters": [
+                        "ics"
+                    ]
+                },
+                {
+                    "rank": "6",
+                    "player_id": "maelstrom",
+                    "display_name": "Maelstrom",
+                    "characters": [
+                        "fox"
+                    ]
+                },
+                {
+                    "rank": "7",
+                    "player_id": "juicebox",
+                    "display_name": "Juicebox",
+                    "characters": [
+                        "sheik"
+                    ]
+                },
+                {
+                    "rank": "8",
+                    "player_id": "milkman",
+                    "display_name": "JI",
+                    "characters": [
+                        "fox"
+                    ]
+                },
+                {
+                    "rank": "9",
+                    "player_id": "seven",
+                    "display_name": "Seven",
+                    "characters": [
+                        "sheik"
+                    ]
+                },
+                {
+                    "rank": "10",
+                    "player_id": "eve",
+                    "display_name": "eve",
+                    "characters": [
+                        "jigglypuff"
+                    ]
+                },
+                {
+                    "rank": "11",
+                    "player_id": "anakin",
+                    "display_name": "Anakin",
+                    "characters": [
+                        "marth"
+                    ]
+                },
+                {
+                    "rank": "12",
+                    "player_id": "egg",
+                    "display_name": "egg",
+                    "characters": [
+                        "sheik"
+                    ]
+                },
+                {
+                    "rank": "13",
+                    "player_id": "vintage",
+                    "display_name": "Vintage",
+                    "characters": [
+                        "marth"
+                    ]
+                },
+                {
+                    "rank": "14",
+                    "player_id": "gibblez",
+                    "display_name": "Gibblez",
+                    "characters": [
+                        "fox"
+                    ]
                 }
             ]
         },
@@ -345,24 +449,80 @@ const MDVA_RANKINGS_DATA =
         },
         {
             "title": "Summer 2022",
-            "period": "",
-            "panelists": "",
-            "organizer": "",
-            "images_credit": "",
-            "release": "",
-            "release_id": "",
+            "period": "2022/04/22 - 2022/08/31",
+            "panelists": "4est, Bard, PurpleDolphin, Quote, shoelegend88, Vintage",
+            "organizer": "Vintage",
+            "images_credit": "Vintage (AI), Bard (AI)",
+            "release": "2022 September",
+            "release_id": "2022-09",
             "release_link": "",
             "images": [],
             "additional_images": [],
             "ranks": [
                 {
                     "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "player_id": "zain",
+                    "display_name": "Zain",
                     "characters": [
-                        ""
+                        "marth"
                     ]
-                }
+                },
+                {
+                    "rank": "2",
+                    "player_id": "milkman",
+                    "display_name": "JOJI",
+                    "characters": [
+                        "fox"
+                    ]
+                },
+                {
+                    "rank": "3",
+                    "player_id": "khryke",
+                    "display_name": "Khryke",
+                    "characters": [
+                        "marth"
+                    ]
+                },
+                {
+                    "rank": "4",
+                    "player_id": "kmaples",
+                    "display_name": "Kevin Maples",
+                    "characters": [
+                        "fox"
+                    ]
+                },
+                {
+                    "rank": "5",
+                    "player_id": "bones0",
+                    "display_name": "Bones",
+                    "characters": [
+                        "falco"
+                    ]
+                },
+                {
+                    "rank": "6",
+                    "player_id": "prometheus",
+                    "display_name": "Prometheus",
+                    "characters": [
+                        "ganon"
+                    ]
+                },
+                {
+                    "rank": "7",
+                    "player_id": "juicebox",
+                    "display_name": "Juicebox",
+                    "characters": [
+                        "sheik"
+                    ]
+                },
+                {
+                    "rank": "8",
+                    "player_id": "ahmad",
+                    "display_name": "Ahmad",
+                    "characters": [
+                        "marth"
+                    ]
+                },
             ]
         },
         {
@@ -460,223 +620,269 @@ const MDVA_RANKINGS_DATA =
             ]
         },
         {
-            "title": "",
+            "title": "November 2019 Power Ranking?",
             "period": "",
             "panelists": "",
             "organizer": "",
             "images_credit": "",
             "release": "",
-            "release_id": "",
+            "release_id": "2019-11",
             "release_link": "",
             "images": [],
             "additional_images": [],
             "ranks": [
                 {
                     "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "player_id": "zain",
+                    "display_name": "Zain",
                     "characters": [
-                        ""
+                        "marth"
+                    ]
+                },
+                {
+                    "rank": "2",
+                    "player_id": "jerry",
+                    "display_name": "Jerry",
+                    "characters": []
+                },
+                {
+                    "rank": "3",
+                    "player_id": "bobbybigballz",
+                    "display_name": "BBB",
+                    "characters": [
+                        "falco"
+                    ]
+                },
+                {
+                    "rank": "4",
+                    "player_id": "milkman",
+                    "display_name": "MilkMan",
+                    "characters": [
+                        "fox"
+                    ]
+                },
+                {
+                    "rank": "5",
+                    "player_id": "bobomb",
+                    "display_name": "Bob-omb",
+                    "characters": [
+                        "fox"
+                    ]
+                },
+                {
+                    "rank": "6",
+                    "player_id": "juicebox",
+                    "display_name": "Juicebox",
+                    "characters": [
+                        "sheik"
+                    ]
+                },
+                {
+                    "rank": "7",
+                    "player_id": "aglet",
+                    "display_name": "Aglet",
+                    "characters": [
+                        "jigglypuff"
+                    ]
+                },
+                {
+                    "rank": "8",
+                    "player_id": "mvlvchi",
+                    "display_name": "MoG",
+                    "characters": [
+                        "peach"
+                    ]
+                },
+                {
+                    "rank": "9",
+                    "player_id": "mom",
+                    "display_name": "MOM!",
+                    "characters": [
+                        "peach"
+                    ]
+                },
+                {
+                    "rank": "10",
+                    "player_id": "tylerswift",
+                    "display_name": "Tyler Swift",
+                    "characters": [
+                        "pikachu"
+                    ]
+                },
+                {
+                    "rank": "11",
+                    "player_id": "sypherphoenix",
+                    "display_name": "SypherPhoenix",
+                    "characters": [
+                        "fox"
+                    ]
+                },
+                {
+                    "rank": "12",
+                    "player_id": "frostbyte",
+                    "display_name": "Frostbyte",
+                    "characters": [
+                        "ics"
+                    ]
+                },
+                {
+                    "rank": "13",
+                    "player_id": "bones0",
+                    "display_name": "Bones",
+                    "characters": [
+                        "falco"
+                    ]
+                },
+                {
+                    "rank": "14",
+                    "player_id": "busyboi",
+                    "display_name": "Busy Boi",
+                    "characters": [
+                        "falco"
+                    ]
+                },
+                {
+                    "rank": "15",
+                    "player_id": "jbash",
+                    "display_name": "JBash",
+                    "characters": [
+                        "marth"
                     ]
                 }
+                
             ]
         },
         {
-            "title": "",
-            "period": "",
+            "title": "Spring 2019",
+            "period": "2018/08/13 - 2019/01/13",
             "panelists": "",
             "organizer": "",
-            "images_credit": "",
+            "images_credit": "Aglet",
             "release": "",
-            "release_id": "",
+            "release_id": "2019-02",
             "release_link": "",
             "images": [],
             "additional_images": [],
             "ranks": [
                 {
                     "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "player_id": "zain",
+                    "display_name": "Zain",
                     "characters": [
-                        ""
+                        "marth"
                     ]
-                }
-            ]
-        },
-        {
-            "title": "",
-            "period": "",
-            "panelists": "",
-            "organizer": "",
-            "images_credit": "",
-            "release": "",
-            "release_id": "",
-            "release_link": "",
-            "images": [],
-            "additional_images": [],
-            "ranks": [
+                },
                 {
-                    "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "rank": "2",
+                    "player_id": "junebug",
+                    "display_name": "Junebug",
                     "characters": [
-                        ""
+                        "sheik"
                     ]
-                }
-            ]
-        },
-        {
-            "title": "",
-            "period": "",
-            "panelists": "",
-            "organizer": "",
-            "images_credit": "",
-            "release": "",
-            "release_id": "",
-            "release_link": "",
-            "images": [],
-            "additional_images": [],
-            "ranks": [
+                },
                 {
-                    "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
-                    "characters": [
-                        ""
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "",
-            "period": "",
-            "panelists": "",
-            "organizer": "",
-            "images_credit": "",
-            "release": "",
-            "release_id": "",
-            "release_link": "",
-            "images": [],
-            "additional_images": [],
-            "ranks": [
+                    "rank": "3",
+                    "player_id": "jerry",
+                    "display_name": "Jerry",
+                    "characters": []
+                },
                 {
-                    "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "rank": "4",
+                    "player_id": "milkman",
+                    "display_name": "MilkMan",
                     "characters": [
-                        ""
+                        "fox"
                     ]
-                }
-            ]
-        },
-        {
-            "title": "",
-            "period": "",
-            "panelists": "",
-            "organizer": "",
-            "images_credit": "",
-            "release": "",
-            "release_id": "",
-            "release_link": "",
-            "images": [],
-            "additional_images": [],
-            "ranks": [
+                },
                 {
-                    "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "rank": "5",
+                    "player_id": "bobbybigballz",
+                    "display_name": "BBB",
                     "characters": [
-                        ""
+                        "falco"
                     ]
-                }
-            ]
-        },
-        {
-            "title": "",
-            "period": "",
-            "panelists": "",
-            "organizer": "",
-            "images_credit": "",
-            "release": "",
-            "release_id": "",
-            "release_link": "",
-            "images": [],
-            "additional_images": [],
-            "ranks": [
+                },
                 {
-                    "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "rank": "6",
+                    "player_id": "bobomb",
+                    "display_name": "Bob-omb",
                     "characters": [
-                        ""
+                        "fox"
                     ]
-                }
-            ]
-        },
-        {
-            "title": "",
-            "period": "",
-            "panelists": "",
-            "organizer": "",
-            "images_credit": "",
-            "release": "",
-            "release_id": "",
-            "release_link": "",
-            "images": [],
-            "additional_images": [],
-            "ranks": [
+                },
                 {
-                    "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "rank": "7",
+                    "player_id": "juicebox",
+                    "display_name": "Juicebox",
                     "characters": [
-                        ""
+                        "sheik"
                     ]
-                }
-            ]
-        },
-        {
-            "title": "",
-            "period": "",
-            "panelists": "",
-            "organizer": "",
-            "images_credit": "",
-            "release": "",
-            "release_id": "",
-            "release_link": "",
-            "images": [],
-            "additional_images": [],
-            "ranks": [
+                },
                 {
-                    "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "rank": "8",
+                    "player_id": "mvlvchi",
+                    "display_name": "MoG",
                     "characters": [
-                        ""
+                        "peach"
                     ]
-                }
-            ]
-        },
-        {
-            "title": "",
-            "period": "",
-            "panelists": "",
-            "organizer": "",
-            "images_credit": "",
-            "release": "",
-            "release_id": "",
-            "release_link": "",
-            "images": [],
-            "additional_images": [],
-            "ranks": [
+                },
                 {
-                    "rank": "1",
-                    "player_id": "",
-                    "display_name": "",
+                    "rank": "9",
+                    "player_id": "tylerswift",
+                    "display_name": "Tyler Swift",
                     "characters": [
-                        ""
+                        "pikachu"
+                    ]
+                },
+                {
+                    "rank": "10",
+                    "player_id": "mom",
+                    "display_name": "MOM!",
+                    "characters": [
+                        "peach"
+                    ]
+                },
+                {
+                    "rank": "11",
+                    "player_id": "busyboi",
+                    "display_name": "Busy Boi",
+                    "characters": [
+                        "falco"
+                    ]
+                },
+                {
+                    "rank": "12",
+                    "player_id": "frostbyte",
+                    "display_name": "Frostbyte",
+                    "characters": [
+                        "ics"
+                    ]
+                },
+                {
+                    "rank": "13",
+                    "player_id": "sypherphoenix",
+                    "display_name": "SypherPhoenix",
+                    "characters": [
+                        "fox"
+                    ]
+                },
+                {
+                    "rank": "14",
+                    "player_id": "bones0",
+                    "display_name": "Bones",
+                    "characters": [
+                        "falco"
+                    ]
+                },
+                {
+                    "rank": "15",
+                    "player_id": "jbash",
+                    "display_name": "JBash",
+                    "characters": [
+                        "marth"
                     ]
                 }
+                
             ]
         },
         {
