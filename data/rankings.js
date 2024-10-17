@@ -901,9 +901,7 @@ const MDVA_RANKINGS_DATA =
                     "rank": "1",
                     "player_id": "",
                     "display_name": "",
-                    "characters": [
-                        ""
-                    ]
+                    "characters": []
                 }
             ]
         }

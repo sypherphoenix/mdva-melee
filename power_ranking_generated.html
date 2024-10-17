@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>MD/VA Melee: Power Rankings</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style-purple.css">
+    <link rel="stylesheet" href="style/power_ranking.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script src="data/rankings.js"></script>
+    <script src="data/players.js"></script>
+</head>
+
+<body>
+
+    <!-- TODO: Many missing rankings. See collection of issues here: https://github.com/sypherphoenix/mdva-melee/milestone/1 -->
+    <!-- This page will be updated as information is compiled. -->
+
+    <div class="bg_stripes">
+        <div class="bg_grid">
+
+            <div class="page_container">
+
+                <div class="toc_frame">
+                    <div class="toc_container">
+                        <div class="toc_above"><img src="./images/arrow-up.gif"></div>
+                        <div class="toc_outer">
+                            <div class="toc_vertical_borders">
+                                <div class="toc_outer_corner"></div>
+                                <div class="toc_outer_mid"></div>
+                                <div class="toc_outer_corner"></div>
+                            </div>
+                            <table class="toc" id="toc">
+
+                                <!-- Generated content goes here brrrrrrrrr -->
+
+                            </table>
+                            <div class="toc_vertical_borders">
+                                <div class="toc_outer_corner"></div>
+                                <div class="toc_outer_mid"></div>
+                                <div class="toc_outer_corner"></div>
+                            </div>
+                        </div>
+                        <div class="toc_below"><img src="./images/arrow-down.gif"></div>
+                    </div>
+                </div>
+
+
+                <div class="pr_history" id="pr_history">
+
+
+                    <!-- Generated content goes here brrrrrrrrr -->
+
+
+                </div> <!-- PR History End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", fill_toc, false); // Call function on page load
+    document.addEventListener("DOMContentLoaded", fill_pr_history, false); // Call function on page load
+
+    // Generate table of contents from rankings data json.
+    function fill_toc() {
+        var toc = document.getElementById("toc"); // Parent div for toc entries
+
+        MDVA_RANKINGS_DATA.rankings.forEach(function (ranking) {
+            toc.appendChild(
+                generate_toc_entry(ranking.release_id)
+            );
+        });
+    }
+
+    // Generate and correctly arrange elements related to a table of contents entry.
+    // Returns a node(?) that can be appended to a document element.
+    function generate_toc_entry(entry_id) {
+        var toc_row = document.createElement("tr");
+        var toc_data = document.createElement("td");
+
+        var toc_entry = document.createElement("a");
+        toc_entry.setAttribute("href", "#" + entry_id);
+        toc_entry.innerHTML = entry_id;
+
+        toc_data.appendChild(toc_entry);
+        toc_row.appendChild(toc_data);
+        return toc_row;
+
+        /*
+        The generated html should be something like this:
+        
+        <tr><td><a href="#ENTRY_ID">ENTRY_ID</a></td></tr>
+        */
+    }
+
+    // Generate rankings history from rankings data json.
+    function fill_pr_history() {
+
+        var pr_history = document.getElementById("pr_history");
+
+        MDVA_RANKINGS_DATA.rankings.forEach(function (ranking) {
+            /*
+                        <div class="pr_block">
+                            <h2 id="2024-03">Fall/Winter '23-'24</h2>
+                            <div class="pr_block_main">
+    
+
+                                <div class="pr_table_container">            
+                                    <table>
+                                        <tr class="r1"><td>1</td><td><a href="./players/kevinmaples.html">Kevin Maples</a></td><td><img src="./images/heads/fox.png"></td></tr>
+                                        <tr class="r2"><td>2</td><td><a href="./players/khryke.html">Khryke</a></td><td><img src="./images/heads/marth.png"></td></tr>
+                                        <tr class="r3"><td>3</td><td><a href="./players/mog.html">mvlvchi</a></td><td><img src="./images/heads/peach.png"></td></tr>
+                                        <tr class="r4"><td>4</td><td><a href="./players/juicebox.html">Juicebox</a></td><td><img src="./images/heads/sheik.png"></td></tr>
+                                        <tr class="r5"><td>5</td><td><a href="./players/frostbyte.html">Frostbyte</a></td><td><img src="./images/heads/ics.png"></td></tr>
+                                        <tr><td>6</td><td><a href="./players/eve.html">eve</a></td><td><img src="./images/heads/jigglypuff.png"></td></tr>
+                                        <tr><td>7</td><td><a href="./players/maelstrom.html">Maelstrom</a></td><td><img src="./images/heads/fox.png"></td></tr>
+                                        <tr><td>8</td><td><a href="./players/egg.html">egg</a></td><td><img src="./images/heads/sheik.png"></td></tr>
+                                        <tr><td>9</td><td><a href="./players/silliewillie.html">Sillie Willie</a></td><td><img src="./images/heads/falco.png"></td></tr>
+                                        <tr><td>10</td><td><a href="./players/gibblez.html">Gibblez</a></td><td><img src="./images/heads/marth.png"></td></tr>
+                                        <tr><td>11</td><td><a href="./players/busyboi.html">Busy Boi</a></td><td><img src="./images/heads/falco.png"></td></tr>
+                                        <tr><td>12</td><td><a href="./players/anakin.html">Anakin</a></td><td><img src="./images/heads/marth.png"></td></tr>
+                                        <tr><td>13</td><td><a href="./players/cbass.html">CBass</a></td><td><img src="./images/heads/luigi.png"></td></tr>
+                                        <tr><td>14</td><td><a href="./players/vintage.html">Vintage</a></td><td><img src="./images/heads/marth.png"><img src="./images/heads/fox.png"></td></tr></tr>
+                                    </table>
+                                </div>
+            */
+
+            // 1: Create block
+            var pr_block = document.createElement("div");
+            pr_block.setAttribute("class", "pr_block");
+            pr_history.appendChild(pr_block);
+
+            // 2: title
+            var pr_title = document.createElement("h2");
+            pr_title.setAttribute("id", ranking.release_id);
+            pr_title.innerHTML = ranking.title;
+            pr_block.appendChild(pr_title);
+
+            // 3: pr block main
+            var pr_block_main = document.createElement("div");
+            pr_block_main.setAttribute("class", "pr_block_main");
+            pr_block.appendChild(pr_block_main);
+
+            // 3a: rnakings block
+            var pr_table_container = document.createElement("div");
+            pr_table_container.setAttribute("class", "pr_table_container");
+            pr_block_main.appendChild(pr_table_container);
+
+            var pr_table = document.createElement("table");
+            pr_table_container.appendChild(pr_table);
+
+            ranking.ranks.forEach(function(player){
+                pr_table.appendChild(
+                    generate_player_pr_entry(player)
+                    //generate_player_pr_entry(player, info_map[player.player_id])
+                );
+            });
+
+
+            // pr_table_container
+
+            // 3b: image block
+            // 4: pr info block
+
+
+            
+        
+        });
+    }
+
+    //function generate_player_pr_entry(player, player_info){
+    function generate_player_pr_entry(player){
+
+
+        /* <tr class="r#">
+            <td>#</td>
+            <td><a href="./players/player.html">player</a></td>
+            <td><img src="./images/heads/character.png"></td>
+           </tr>
+        */
+
+        var table_row = document.createElement("tr");
+        table_row.setAttribute("class", "r" + player.rank);
+
+        var rank = document.createElement("td");
+        rank.innerHTML = player.rank;
+        table_row.appendChild(rank);
+
+        var name_outer = document.createElement("td");
+        var name_inner = document.createElement("a");
+        name_inner.innerHTML = player.display_name;
+        table_row.appendChild(name_outer);
+        name_outer.appendChild(name_inner);
+        
+        var image_outer = document.createElement("td");
+
+        player.characters.forEach(function(character){
+            var image_inner = document.createElement("img");
+            image_inner.setAttribute("src", "./images/heads/" + character + ".png");
+            image_outer.appendChild(image_inner);
+        });
+
+        table_row.appendChild(image_outer);
+
+
+
+
+
+
+
+        return table_row;
+    }
+
+
+
+
+
+
+
+    /*
+
+    Replicating this html....
+    
+                        <div class="pr_block">
+                            <h2 id="2024-03">Fall/Winter '23-'24</h2>
+                            <div class="pr_block_main">
+    
+                                <div class="pr_table_container">
+                                    <table>
+                                        <tr class="r1"><td>1</td><td><a href="./players/kevinmaples.html">Kevin Maples</a></td><td><img src="./images/heads/fox.png"></td></tr>
+                                        <tr class="r2"><td>2</td><td><a href="./players/khryke.html">Khryke</a></td><td><img src="./images/heads/marth.png"></td></tr>
+                                        <tr class="r3"><td>3</td><td><a href="./players/mog.html">mvlvchi</a></td><td><img src="./images/heads/peach.png"></td></tr>
+                                        <tr class="r4"><td>4</td><td><a href="./players/juicebox.html">Juicebox</a></td><td><img src="./images/heads/sheik.png"></td></tr>
+                                        <tr class="r5"><td>5</td><td><a href="./players/frostbyte.html">Frostbyte</a></td><td><img src="./images/heads/ics.png"></td></tr>
+                                        <tr><td>6</td><td><a href="./players/eve.html">eve</a></td><td><img src="./images/heads/jigglypuff.png"></td></tr>
+                                        <tr><td>7</td><td><a href="./players/maelstrom.html">Maelstrom</a></td><td><img src="./images/heads/fox.png"></td></tr>
+                                        <tr><td>8</td><td><a href="./players/egg.html">egg</a></td><td><img src="./images/heads/sheik.png"></td></tr>
+                                        <tr><td>9</td><td><a href="./players/silliewillie.html">Sillie Willie</a></td><td><img src="./images/heads/falco.png"></td></tr>
+                                        <tr><td>10</td><td><a href="./players/gibblez.html">Gibblez</a></td><td><img src="./images/heads/marth.png"></td></tr>
+                                        <tr><td>11</td><td><a href="./players/busyboi.html">Busy Boi</a></td><td><img src="./images/heads/falco.png"></td></tr>
+                                        <tr><td>12</td><td><a href="./players/anakin.html">Anakin</a></td><td><img src="./images/heads/marth.png"></td></tr>
+                                        <tr><td>13</td><td><a href="./players/cbass.html">CBass</a></td><td><img src="./images/heads/luigi.png"></td></tr>
+                                        <tr><td>14</td><td><a href="./players/vintage.html">Vintage</a></td><td><img src="./images/heads/marth.png"><img src="./images/heads/fox.png"></td></tr></tr>
+                                    </table>
+                                </div>
+                            
+                                <div class="pr_img">
+                                    <a target="_blank" href="./images/pr/2024-03/IMG_1284.jpg"><img src="./images/pr/2024-03/IMG_1284_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/Untitled.png"><img src="./images/pr/2024-03/Untitled_t.jpg"></a>
+                                    <details>
+                                    <summary>Player Info Cards</summary>
+                                    <a target="_blank" href="./images/pr/2024-03/kevinprcard2.0.png"><img src="./images/pr/2024-03/kevinprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/khrykeprcard2.0.png"><img src="./images/pr/2024-03/khrykeprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/mogprcard2.0.png"><img src="./images/pr/2024-03/mogprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/juiceboxprcard2.0.png"><img src="./images/pr/2024-03/juiceboxprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/frostbyteprcard2.0.png"><img src="./images/pr/2024-03/frostbyteprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/eveprcard.png"><img src="./images/pr/2024-03/eveprcard_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/ethanprcard2.0.png"><img src="./images/pr/2024-03/ethanprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/eggprcard2.0.png"><img src="./images/pr/2024-03/eggprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/willieprcard2.0.png"><img src="./images/pr/2024-03/willieprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/gibblezprcard2.0.png"><img src="./images/pr/2024-03/gibblezprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/busyboiprcard2.0.png"><img src="./images/pr/2024-03/busyboiprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/Anakinprcard2.0.png"><img src="./images/pr/2024-03/Anakinprcard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/cbasscard2.0.png"><img src="./images/pr/2024-03/cbasscard2.0_t.jpg"></a>
+                                    <a target="_blank" href="./images/pr/2024-03/vintageprcard2.0.png"><img src="./images/pr/2024-03/vintageprcard2.0_t.jpg"></a>
+                                    </details>
+                                </div>
+                            </div> <!-- END PR BLOCK MAIN -->
+
+
+    <div class="pr_block_info">
+        <table>
+            <tr><td>Period:</td><td>2023/09/01 - 2024/02/29</td></tr>
+            <tr><td>Panelists:</td><td>egg, Kevin Maples, Kush Messiah, Pulch, Takeshi</td></tr>
+            <tr><td>Organizer:</td><td>Kevin Maples</td></tr>
+            <tr><td>Images:</td><td>Jorge (sticky notes), Kevin Maples (mspaint & cards), eve (cards)</td></tr>
+            <tr><td>Released:</td><td><a href="./images/pr/2024-03/release.jpg">2024 March</a></td></tr>
+        </table>
+    </div>
+
+                    </div > < !--END PR BLOCK-- >
+
+*/
+
+
+</script>
+
+</html>
